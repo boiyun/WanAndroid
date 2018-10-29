@@ -14,10 +14,10 @@
 
 ##项目截图
 
-![](/Users/chenbo/Desktop/pic/1.png)
-![](/Users/chenbo/Desktop/pic/2.png)
-![](/Users/chenbo/Desktop/pic/3.png)
-![](/Users/chenbo/Desktop/pic/4.png)
+![](/screenshot/1.png)
+![](/screenshot/2.png)
+![](/screenshot/3.png)
+![](/screenshot/4.png)
 
 ##最后
 * 感谢鸿洋大神提供的平台
