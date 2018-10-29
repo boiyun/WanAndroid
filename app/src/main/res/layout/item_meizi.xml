@@ -13,9 +13,10 @@
         <ImageView
             android:id="@+id/item_iv_meizi"
             android:layout_width="200dp"
+            android:src="@mipmap/icon_empty_common"
             android:layout_height="300dp"
             android:scaleType="centerCrop"
-            android:transitionName="@string/hello_blank_fragment" />
+            />
 
     </FrameLayout>
 
