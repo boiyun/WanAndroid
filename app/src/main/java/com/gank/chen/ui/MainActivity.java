@@ -217,7 +217,9 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
                 RouterUtil.goToActivity(RouterUrlManager.MINE_COLLECTION);
                 break;
             case R.id.mine_message:
-                RouterUtil.goToActivity(RouterUrlManager.MINE_MESSAGE);
+//                RouterUtil.goToActivity(RouterUrlManager.MINE_MESSAGE);
+
+                SnackbarUtils.with(bottomnavigation).setMessage("我的消息").show();
                 break;
             case R.id.mine_setting:
                 RouterUtil.goToActivity(RouterUrlManager.SETTING);
