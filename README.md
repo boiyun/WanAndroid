@@ -12,6 +12,10 @@
 * lottie
 * material-dialogs
 
+
+##apk安装地址
+[](https://fir.im/e39b)
+
 ##项目截图
 
 ![](/screenshot/1.png)
