@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/group_main">
+        <item
+            android:id="@+id/mine_favor"
+            android:icon="@mipmap/icon_favor"
+            android:title="我的收藏" />
+        <item
+            android:id="@+id/mine_message"
+            android:icon="@mipmap/icon_notice"
+            android:title="消息"
+            app:showAsAction="never" />
+        <item
+        android:id="@+id/mine_setting"
+        android:icon="@mipmap/icon_settings"
+        android:title="设置"
+        app:showAsAction="never" />
+        <item
+            android:id="@+id/mine_share"
+            android:icon="@mipmap/icon_share"
+            android:title="分享"
+            app:showAsAction="never" />
+
+    </group>
+    <group android:id="@+id/group_other">
+        <item
+            android:id="@+id/mine_about"
+            android:icon="@mipmap/icon_info"
+            android:title="关于"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/mine_exit"
+            android:icon="@mipmap/icon_exit"
+            android:title="退出账号"
+            app:showAsAction="never" />
+    </group>
+
+
+</menu>

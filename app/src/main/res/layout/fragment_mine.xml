@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_mine"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<View-->
+        <!--android:id="@+id/fake_status_bar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/statusbar_view_height"-->
+        <!--android:background="@color/colorPrimary" />-->
+
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/qb_px_55"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--app:layout_collapseMode="pin">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_setting"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_gravity="left"-->
+            <!--android:padding="@dimen/qb_px_5"-->
+            <!--android:src="@mipmap/icon_navigation_set" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_tool_bar_right"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_gravity="right"-->
+            <!--android:layout_marginRight="@dimen/qb_px_15"-->
+            <!--android:padding="@dimen/qb_px_5"-->
+            <!--android:src="@mipmap/icon_navigation_bell" />-->
+
+
+    <!--</android.support.v7.widget.Toolbar>-->
+
+    <include
+        layout="@layout/layout_mine_top"
+        app:layout_collapseMode="parallax"
+        app:layout_collapseParallaxMultiplier="0.7" />
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+package com.gank.chen.common;
+
+/**
+ * Creat by chen on 2018/10/10
+ * Describe:
+ *
+ * @author chenbo
+ */
+public class RouterUrlManager {
+
+    //acitvity
+
+    public static final String LOGIN = "/activity/LoginActivity";
+    public static final String SETTING = "/activity/SettingActivity";
+    public static final String MINE_ORDER = "/activity/MineOrderActivity";
+    public static final String DETAIL = "/activity/DetailActivity";
+    public static final String MEIZI_DETAIL = "/activity/MeiZiDetailActivity";
+    public static final String REGISTER = "/activity/RegisterActivity";
+    public static final String MAIN = "/ui/MainActivity";
+    public static final String MINE_COLLECTION = "/activity/MineCollectionsActivity";
+    public static final String ABOUT = "/activity/AboutUsActivity";
+    public static final String MINE_MESSAGE = "/activity/MineMessageActivity";
+
+
+    //fragment
+
+    public static final String ANDROID_FRAGMENT = "/fragment/ChaptersListFragment";
+    public static final String CHAPTERS_FRAGMENT = "/fragment/ChaptersFragment";
+    public static final String MAIN_FRAGMENT = "/fragment/MainFragment";
+    public static final String MEIZI_FRAGMENT = "/fragment/MeiZiFragment";
+}

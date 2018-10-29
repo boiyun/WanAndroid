@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.gank.chen.ui.activity.AboutUsActivity">
+    <item
+        android:id="@+id/action_shares"
+        android:icon="@mipmap/icon_share_white"
+        android:orderInCategory="100"
+        android:title="分享"
+        app:showAsAction="always" />
+</menu>

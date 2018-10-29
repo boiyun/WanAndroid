@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_reload"
+        android:orderInCategory="100"
+        android:title="刷新"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/action_copyaddress"
+        android:orderInCategory="100"
+        android:title="复制地址"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/action_openformout"
+        android:orderInCategory="100"
+        android:title="用浏览器打开"
+
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="100"
+        android:title="分享"
+        app:showAsAction="collapseActionView" />
+</menu>
