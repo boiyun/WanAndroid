@@ -6,6 +6,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.gank.chen.R;
 import com.gank.chen.adapter.MeiZiPicAdapter;
@@ -27,7 +28,7 @@ import butterknife.BindView;
  */
 @CreatePresenter(MeiZiListPresenter.class)
 @Route(path = RouterUrlManager.MEIZI_FRAGMENT)
-public class MeiZiFragment extends BaseFragment<PullDownLoadMoreViewImp<List<MeiZi>>, MeiZiListPresenter>implements PullDownLoadMoreViewImp {
+public class MeiZiFragment extends BaseFragment<PullDownLoadMoreViewImp<List<MeiZi>>, MeiZiListPresenter> implements PullDownLoadMoreViewImp {
     @BindView(R.id.recyclerview)
     RecyclerView recyclerview;
 
@@ -56,6 +57,18 @@ public class MeiZiFragment extends BaseFragment<PullDownLoadMoreViewImp<List<Mei
                 bundle.putString("picurl", bean.url);
                 RouterUtil.goToActivity(RouterUrlManager.MEIZI_DETAIL, bundle);
             }
+        });
+        recyclerview.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    Glide.with(getActivity()).resumeRequests();
+                } else {
+                    Glide.with(getActivity()).pauseRequests();
+                }
+            }
+
+
         });
     }
 

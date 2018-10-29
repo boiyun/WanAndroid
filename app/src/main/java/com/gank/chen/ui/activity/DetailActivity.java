@@ -53,6 +53,8 @@ public class DetailActivity extends BaseNoNetActivity  {
     @Override
     public void initData() {
         webviewDetail.loadUrl(weburl);
+//        webviewDetail.loadUrl("http://m.youku.com/video/id_XODEzMjU1MTI4.html");
+//        webviewDetail.loadUrl("https://www.bilibili.com/video/av34675831/?spm_id_from=333.334.chief_recommend.16");
     }
 
     @Override
