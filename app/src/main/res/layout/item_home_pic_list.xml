@@ -5,17 +5,15 @@
     android:id="@+id/rl_item_main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/qb_px_5"
-    android:background="@color/color_ffffff"
-    android:paddingLeft="@dimen/qb_px_15"
-    android:paddingRight="@dimen/qb_px_15"
-    android:paddingTop="@dimen/qb_px_10">
+    android:background="@drawable/bg_white">
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/qb_px_15"
         android:layout_marginRight="@dimen/qb_px_10"
+        android:layout_marginTop="@dimen/qb_px_10"
         android:ellipsize="end"
         android:maxLines="1"
         android:singleLine="true"
@@ -43,6 +41,7 @@
         android:layout_height="@dimen/qb_px_30"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/tv_user_name"
+        android:layout_marginLeft="@dimen/qb_px_15"
         android:layout_marginTop="@dimen/qb_px_10"
         android:padding="@dimen/qb_px_5"
         android:src="@mipmap/icon_unlike" />
@@ -53,7 +52,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@id/iv_like"
+        android:layout_marginRight="@dimen/qb_px_15"
         android:textColor="@color/color_757575"
         android:textSize="13sp"
         tools:text="2018dddddddd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_1"
+        android:layout_alignBottom="@id/iv_like"
+        android:background="@color/color_DDDEE3" />
 </RelativeLayout>

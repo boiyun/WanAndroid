@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight">
+    <!--android:color="@color/color_60white">&lt;!&ndash; press和水波纹的颜色 &ndash;&gt;-->
+    <!--&lt;!&ndash;或者直接定义normal(未点击)状态下的颜色&ndash;&gt;-->
+    <!--&lt;!&ndash;<item android:drawable="@drawable/bg_white" />&ndash;&gt;-->
+    <!--<item android:drawable="@color/color_ffffff" />-->
+    <item
+        android:id="@android:id/mask"
+        android:drawable="@android:color/white" />
+</ripple>

@@ -4,11 +4,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/color_f4f4f4</item>
+        <item name="android:windowBackground">@color/color_ffffff</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <item name="android:textAllCaps">false</item>
         <!--<item name="android:theme">@style/AppTheme.AppBarOverlay</item>-->
-        android:theme="@style/AppTheme.AppBarOverlay"
         <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
     </style>
 

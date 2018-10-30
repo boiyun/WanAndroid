@@ -6,16 +6,12 @@ import android.support.v4.view.ViewPager;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gank.chen.R;
 import com.gank.chen.adapter.ChaptersPageAdapter;
-import com.gank.chen.adapter.HomePageAdapter;
 import com.gank.chen.base.BaseFragment;
 import com.gank.chen.base.CreatePresenter;
 import com.gank.chen.common.RouterUrlManager;
-import com.gank.chen.mvp.model.ArticleModel;
 import com.gank.chen.mvp.model.ChaptersListModel;
-import com.gank.chen.mvp.model.ChaptersModel;
 import com.gank.chen.mvp.presenter.ChaptersPresenter;
 import com.gank.chen.mvp.view.ImpChaptersFragment;
-import com.gank.chen.mvp.view.OnLoadSuccessViewImp;
 
 import java.util.List;
 import java.util.Objects;
