@@ -3,6 +3,7 @@ package com.gank.chen.ui.activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -12,12 +13,16 @@ import com.gank.chen.adapter.MainArticleAdapter;
 import com.gank.chen.adapter.MineCollectionsAdapter;
 import com.gank.chen.base.BaseActivity;
 import com.gank.chen.base.CreatePresenter;
+import com.gank.chen.common.ConstantMap;
 import com.gank.chen.common.RouterUrlManager;
 import com.gank.chen.mvp.model.ArticleListModel;
 import com.gank.chen.mvp.model.ArticleModel;
 import com.gank.chen.mvp.presenter.CarsListPresenter;
+import com.gank.chen.mvp.view.ImpChaptersListFragment;
 import com.gank.chen.mvp.view.PullDownLoadMoreViewImp;
 import com.gank.chen.util.RouterUtil;
+import com.gank.chen.util.SharePreferenceUtil;
+import com.gank.chen.util.SnackbarUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
 import java.util.List;
@@ -29,7 +34,7 @@ import butterknife.BindView;
  */
 @CreatePresenter(CarsListPresenter.class)
 @Route(path = RouterUrlManager.MINE_COLLECTION)
-public class MineCollectionsActivity extends BaseActivity<PullDownLoadMoreViewImp<ArticleModel>, CarsListPresenter> implements PullDownLoadMoreViewImp {
+public class MineCollectionsActivity extends BaseActivity<ImpChaptersListFragment, CarsListPresenter> implements ImpChaptersListFragment {
 
     @BindView(R.id.rv_carslist)
     RecyclerView rvCarslist;
@@ -61,12 +66,20 @@ public class MineCollectionsActivity extends BaseActivity<PullDownLoadMoreViewIm
                 RouterUtil.goToActivity(RouterUrlManager.DETAIL, bundle);
             }
         });
+
+        adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                ArticleListModel data = (ArticleListModel) adapter.getData().get(position);
+
+                getPresenter().onUnCollect(activity, data.getId(),data.getOriginId(), position);
+            }
+        });
     }
 
 
     @Override
-    public void onLoadSucess(Object obj) {
-        ArticleModel model = (ArticleModel) obj;
+    public void onLoadSucess(ArticleModel model) {
         super.onLoadSucess(model.getDatas());
         modelDatas = model.getDatas();
         adapter.setNewData(modelDatas);
@@ -79,9 +92,19 @@ public class MineCollectionsActivity extends BaseActivity<PullDownLoadMoreViewIm
     }
 
     @Override
-    public void onLoadMoreSuccess(Object obj) {
-        ArticleModel model = (ArticleModel) obj;
+    public void onLoadMoreSuccess(ArticleModel model) {
         super.onLoadMoreSuccess(model.getDatas());
         adapter.addData(model.getDatas());
     }
+
+    @Override
+    public void onCollectSucess(int position) {
+    }
+
+    @Override
+    public void onUnCollectSucess(int position) {
+        adapter.getData().remove(position);
+        adapter.notifyItemRemoved(position);
+    }
+
 }

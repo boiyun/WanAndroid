@@ -6,7 +6,9 @@ import com.gank.chen.base.BasePrestener;
 import com.gank.chen.http.ApiRetrofit;
 import com.gank.chen.http.subscriber.ApiSubscriberObserver;
 import com.gank.chen.http.subscriber.LodeMoreObserverSubscriber;
+import com.gank.chen.http.subscriber.SubscriberObserverProgress;
 import com.gank.chen.mvp.model.ArticleModel;
+import com.gank.chen.mvp.view.ImpChaptersListFragment;
 import com.gank.chen.mvp.view.PullDownLoadMoreViewImp;
 import com.gank.chen.widget.StateView;
 
@@ -15,7 +17,7 @@ import com.gank.chen.widget.StateView;
  * @date 2017/12/20
  */
 
-public class CarsListPresenter extends BasePrestener<PullDownLoadMoreViewImp<ArticleModel>> {
+public class CarsListPresenter extends BasePrestener<ImpChaptersListFragment> {
     public void getDetailData(Context context, StateView stateView, int page) {
         ApiRetrofit.setObservableSubscribe(apiUtil.getCollectList(page),
                 new ApiSubscriberObserver<ArticleModel>(context, stateView) {
@@ -40,4 +42,20 @@ public class CarsListPresenter extends BasePrestener<PullDownLoadMoreViewImp<Art
                 });
     }
 
+    /**
+     * 取消收藏文章
+     * @param context
+     * @param id
+     * @param position
+     */
+    public void onUnCollect(Context context, int id,int originId, int position) {
+        ApiRetrofit.setObservableBooleanSubscribe(apiUtil.toUnCollectFromMine(id,originId), new SubscriberObserverProgress<Boolean>(context) {
+            @Override
+            public void onSuccess(Boolean aBoolean) {
+                if (aBoolean) {
+                    getView().onUnCollectSucess(position);
+                }
+            }
+        });
+    }
 }

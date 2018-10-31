@@ -22,6 +22,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * @author chen
@@ -140,6 +141,17 @@ public interface ApiUtil {
     Observable<BaseModel> toUnCollect(@Path("id") int id);
 
     /**
+     * 取消收藏站内文章(我的收藏)
+     *
+     * @param id
+     * @param originId
+     * @return BaseModel
+     */
+    @Headers(WAN_HOST)
+    @POST(UrlManager.UN_COLLECT_FROM_MINE)
+    Observable<BaseModel> toUnCollectFromMine(@Path("id") int id, @Query("originId") int originId);
+
+    /**
      * 获取公众号列表
      *
      * @return List<ChaptersListModel>
@@ -157,5 +169,5 @@ public interface ApiUtil {
      */
     @Headers(WAN_HOST)
     @GET(UrlManager.CHAPTERS_LIST)
-    Observable<BaseModel<ArticleModel>> toGetChaptersList(@Path("id") int id,@Path("page") int page);
+    Observable<BaseModel<ArticleModel>> toGetChaptersList(@Path("id") int id, @Path("page") int page);
 }

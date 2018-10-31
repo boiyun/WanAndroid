@@ -40,6 +40,10 @@ public class UrlManager {
      */
     public static final String UN_COLLECT = "lg/uncollect_originId/{id}/json";
     /**
+     * 取消收藏站内文章(我的收藏)
+     */
+    public static final String UN_COLLECT_FROM_MINE = "lg/uncollect/{id}/json";
+    /**
      * 获取公众号列表
      */
     public static final String CHAPTERS = "wxarticle/chapters/json";

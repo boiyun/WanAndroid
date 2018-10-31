@@ -5,6 +5,7 @@ import java.util.List;
 /**
  * Creat by chen on 2018/10/17
  * Describe:
+ *
  * @author chenbo
  */
 public class ArticleListModel {
@@ -25,13 +26,22 @@ public class ArticleListModel {
     private long publishTime;
     private int superChapterId;
     private String superChapterName;
-//    private List<String> tags;
+    //    private List<String> tags;
     private String title;
     private int type;
     private int userId;
     private int visible;
     private int zan;
+    //originId 代表的是你收藏之前的那篇文章本身的id； 但是收藏支持主动添加，这种情况下，没有originId则为-1
+    private int originId;
 
+    public int getOriginId() {
+        return originId;
+    }
+
+    public void setOriginId(int originId) {
+        this.originId = originId;
+    }
 
     public String getApkLink() {
         return apkLink;
