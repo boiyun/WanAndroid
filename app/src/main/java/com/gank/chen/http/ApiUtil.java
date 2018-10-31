@@ -6,6 +6,7 @@ import com.gank.chen.mvp.model.BaseGankModel;
 import com.gank.chen.mvp.model.BaseModel;
 import com.gank.chen.mvp.model.CarsListModel;
 import com.gank.chen.mvp.model.ChaptersListModel;
+import com.gank.chen.mvp.model.CommonWebsiteModel;
 import com.gank.chen.mvp.model.MeiZi;
 import com.gank.chen.mvp.model.RegisterModel;
 import com.gank.chen.mvp.model.VideoBean;
@@ -170,4 +171,13 @@ public interface ApiUtil {
     @Headers(WAN_HOST)
     @GET(UrlManager.CHAPTERS_LIST)
     Observable<BaseModel<ArticleModel>> toGetChaptersList(@Path("id") int id, @Path("page") int page);
+
+    /**
+     * 获取常用网站
+     *
+     * @return List<CommonWebsiteModel>
+     */
+    @Headers(WAN_HOST)
+    @POST(UrlManager.COMMON_WEBSITE)
+    Observable<BaseModel<List<CommonWebsiteModel>>> toGetCommonWebsite();
 }

@@ -57,23 +57,16 @@ public class MineCollectionsActivity extends BaseActivity<ImpChaptersListFragmen
         rvCarslist.setLayoutManager(new LinearLayoutManager(activity));
         adapter = new MineCollectionsAdapter(modelDatas);
         rvCarslist.setAdapter(adapter);
-        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Bundle bundle = new Bundle();
-                bundle.putString("weburl", ((ArticleListModel) (adapter.getData().get(position))).getLink());
-                bundle.putString("title", ((ArticleListModel) (adapter.getData().get(position))).getTitle());
-                RouterUtil.goToActivity(RouterUrlManager.DETAIL, bundle);
-            }
+        adapter.setOnItemClickListener((adapter, view, position) -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("weburl", ((ArticleListModel) (adapter.getData().get(position))).getLink());
+            bundle.putString("title", ((ArticleListModel) (adapter.getData().get(position))).getTitle());
+            RouterUtil.goToActivity(RouterUrlManager.DETAIL, bundle);
         });
 
-        adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                ArticleListModel data = (ArticleListModel) adapter.getData().get(position);
-
-                getPresenter().onUnCollect(activity, data.getId(),data.getOriginId(), position);
-            }
+        adapter.setOnItemChildClickListener((adapter, view, position) -> {
+            ArticleListModel data = (ArticleListModel) adapter.getData().get(position);
+            getPresenter().onUnCollect(activity, data.getId(),data.getOriginId(), position);
         });
     }
 

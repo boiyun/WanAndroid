@@ -45,7 +45,7 @@ public class DetailActivity extends BaseNoNetActivity  {
     public void initView() {
         weburl = getIntent().getStringExtra("weburl");
         title = getIntent().getStringExtra("title");
-        initToolBar("详情", false);
+        initToolBar(title, false);
         webviewDetail.setShowProgress(true);
 
     }

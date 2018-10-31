@@ -51,4 +51,8 @@ public class UrlManager {
      * 查看某个公众号历史数据
      */
     public static final String CHAPTERS_LIST = "wxarticle/list/{id}/{page}/json";
+    /**
+     * 获取常用网站
+     */
+    public static final String COMMON_WEBSITE = "friend/json";
 }

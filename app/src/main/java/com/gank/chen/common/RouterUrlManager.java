@@ -20,6 +20,7 @@ public class RouterUrlManager {
     public static final String MINE_COLLECTION = "/activity/MineCollectionsActivity";
     public static final String ABOUT = "/activity/AboutUsActivity";
     public static final String MINE_MESSAGE = "/activity/MineMessageActivity";
+    public static final String COMMON_WEBSITES = "/activity/CommonWebsitesActivity";
 
 
     //fragment
