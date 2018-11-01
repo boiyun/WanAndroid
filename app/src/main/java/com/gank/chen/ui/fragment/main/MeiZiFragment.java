@@ -58,18 +58,18 @@ public class MeiZiFragment extends BaseFragment<PullDownLoadMoreViewImp<List<Mei
                 RouterUtil.goToActivity(RouterUrlManager.MEIZI_DETAIL, bundle);
             }
         });
-        recyclerview.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    Glide.with(getActivity()).resumeRequests();
-                } else {
-                    Glide.with(getActivity()).pauseRequests();
-                }
-            }
-
-
-        });
+//        recyclerview.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+//                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+//                    Glide.with(getActivity()).resumeRequests();
+//                } else {
+//                    Glide.with(getActivity()).pauseRequests();
+//                }
+//            }
+//
+//
+//        });
     }
 
     @Override

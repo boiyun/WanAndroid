@@ -2,23 +2,18 @@ package com.gank.chen.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.gank.chen.R;
 import com.gank.chen.adapter.CommonWebsiteAdapter;
 import com.gank.chen.base.BaseActivity;
 import com.gank.chen.base.CreatePresenter;
 import com.gank.chen.common.RouterUrlManager;
-import com.gank.chen.mvp.model.ArticleModel;
 import com.gank.chen.mvp.model.CommonWebsiteModel;
 import com.gank.chen.mvp.presenter.CommonWebsitesPresenter;
 import com.gank.chen.mvp.view.OnLoadSuccessViewImp;
 import com.gank.chen.util.RouterUtil;
-import com.google.android.flexbox.AlignItems;
 import com.google.android.flexbox.FlexDirection;
-import com.google.android.flexbox.FlexWrap;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.google.android.flexbox.JustifyContent;
 

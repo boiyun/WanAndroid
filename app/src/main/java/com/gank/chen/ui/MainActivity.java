@@ -15,6 +15,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,6 +37,7 @@ import com.gank.chen.mvp.presenter.MainActivityPresenter;
 import com.gank.chen.mvp.view.ImpMainActivity;
 import com.gank.chen.ui.fragment.main.MainFragment;
 import com.gank.chen.ui.fragment.main.MeiZiFragment;
+import com.gank.chen.util.CommenUtil;
 import com.gank.chen.util.GlideCircleTransform;
 import com.gank.chen.util.RouterUtil;
 import com.gank.chen.util.SharePreferenceUtil;
@@ -91,6 +93,8 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
         String user = SharePreferenceUtil.getString(ConstantMap.USER_HEADER_ICON, "");
         if (!TextUtils.isEmpty(user)) {
             Glide.with(activity).load(Uri.parse(user)).transform(new GlideCircleTransform(activity)).into(ivUserheader);
+        } else {
+            ivUserheader.setImageResource(R.mipmap.default_headimg_male);
         }
         if (!TextUtils.isEmpty(userPhone)) {
             tvUsername.setText(userPhone);
@@ -148,23 +152,7 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
 
             @Override
             public void onPageSelected(int position) {
-                switch (position) {
-                    case 0:
-                        bottomnavigation.setSelectedItemId(R.id.tab_one);
-                        getSupportActionBar().setTitle(getResources().getString(R.string.tab_home));
-                        break;
-                    case 1:
-                        bottomnavigation.setSelectedItemId(R.id.tab_two);
-                        getSupportActionBar().setTitle(getResources().getString(R.string.tab_chapter));
-                        break;
-                    case 2:
-                        bottomnavigation.setSelectedItemId(R.id.tab_three);
-                        getSupportActionBar().setTitle(getResources().getString(R.string.tab_meizi));
-                        break;
-
-                    default:
-                        break;
-                }
+                changePage(position);
             }
 
             @Override
@@ -184,6 +172,30 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
     private void clickTab(int item) {
         //为防止隔页切换时,滑过中间页面的问题,去除页面切换缓慢滑动的动画效果
         viewpager.setCurrentItem(item, false);
+        supportInvalidateOptionsMenu();
+    }
+
+    private void changePage(int position) {
+        switch (position) {
+            case 0:
+                bottomnavigation.setSelectedItemId(R.id.tab_one);
+                getSupportActionBar().setTitle(getResources().getString(R.string.tab_home));
+                supportInvalidateOptionsMenu();
+                break;
+            case 1:
+                bottomnavigation.setSelectedItemId(R.id.tab_two);
+                getSupportActionBar().setTitle(getResources().getString(R.string.tab_chapter));
+                supportInvalidateOptionsMenu();
+                break;
+            case 2:
+                bottomnavigation.setSelectedItemId(R.id.tab_three);
+                getSupportActionBar().setTitle(getResources().getString(R.string.tab_meizi));
+                supportInvalidateOptionsMenu();
+                break;
+
+            default:
+                break;
+        }
     }
 
     @Override
@@ -240,26 +252,11 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
                             .content("确定要退出账号吗？")
                             .positiveText("确定")
                             .negativeText("取消")
-                            .onPositive(new MaterialDialog.SingleButtonCallback() {
-                                @Override
-                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                    getPresenter().toLogout(activity);
-                                }
-                            })
-                            .onNegative(new MaterialDialog.SingleButtonCallback() {
-                                @Override
-                                public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                    dialog.dismiss();
-                                }
-                            }).show();
+                            .onPositive((dialog, which) -> getPresenter().toLogout(activity))
+                            .onNegative((dialog, which) -> dialog.dismiss()).show();
                 } else {
                     SnackbarUtils.with(bottomnavigation).setMessage("请先登录哦~")
-                            .setAction("去登录", new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    RouterUtil.goToActivity(RouterUrlManager.LOGIN);
-                                }
-                            })
+                            .setAction("去登录", v -> RouterUtil.goToActivity(RouterUrlManager.LOGIN))
                             .showWarning();
                 }
                 drawerlayout.closeDrawer(GravityCompat.START);
@@ -356,4 +353,30 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
             drawerlayout.closeDrawer(GravityCompat.START);
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_hot, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.mine_hot:
+                RouterUtil.goToActivity(RouterUrlManager.COMMON_WEBSITES);
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        int currentItem = viewpager.getCurrentItem();
+        menu.findItem(R.id.mine_hot).setVisible(currentItem == 0);
+        return super.onPrepareOptionsMenu(menu);
+    }
+
 }

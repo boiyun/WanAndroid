@@ -35,6 +35,4 @@
             android:title="退出账号"
             app:showAsAction="never" />
     </group>
-
-
 </menu>

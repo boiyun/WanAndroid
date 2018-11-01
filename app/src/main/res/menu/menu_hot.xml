@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.gank.chen.ui.activity.AboutUsActivity">
+    <!--<item-->
+    <!--android:id="@+id/action_shares"-->
+    <!--android:icon="@mipmap/icon_share_white"-->
+    <!--android:orderInCategory="100"-->
+    <!--android:title="分享"-->
+    <!--app:showAsAction="always" />-->
+    <item
+        android:id="@+id/mine_hot"
+        android:icon="@drawable/ic_hot_fill"
+        android:orderInCategory="1"
+        android:title="常用网站"
+        app:showAsAction="always" />
+</menu>

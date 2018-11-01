@@ -309,7 +309,7 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePrestener<V
 
 
     protected void setStatusBar() {
-        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary),0);
     }
 
     /**

@@ -14,6 +14,7 @@ import java.util.Map;
 /**
  * Creat by chen on 2018/10/18
  * Describe:
+ * @author chenbo
  */
 public class RegisterPresenter extends BasePrestener<OnLoadSuccessViewImp<RegisterModel>> {
     public void RegisterNow(Context context, String phone, String password) {
