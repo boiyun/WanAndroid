@@ -80,7 +80,6 @@ public class MineCollectionsActivity extends BaseActivity<ImpChaptersListFragmen
 
     @Override
     protected void onLoadMoreData(RefreshLayout refreshLayout) {
-        super.onLoadMoreData(refreshLayout);
         getPresenter().getMoreData(this, page);
     }
 

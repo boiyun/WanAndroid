@@ -21,6 +21,8 @@ public class RouterUrlManager {
     public static final String ABOUT = "/activity/AboutUsActivity";
     public static final String MINE_MESSAGE = "/activity/MineMessageActivity";
     public static final String COMMON_WEBSITES = "/activity/CommonWebsitesActivity";
+    public static final String SEARCH_ACTIVITY = "/activity/SearchActivity";
+    public static final String QUARY_RESULT= "/activity/QuaryResultActivity";
 
 
     //fragment

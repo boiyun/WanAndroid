@@ -84,6 +84,10 @@
         <activity
             android:name=".ui.activity.CommonWebsitesActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SearchActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.QuaryResultActivity"></activity>
     </application>
 
 </manifest>

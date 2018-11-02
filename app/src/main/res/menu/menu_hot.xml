@@ -14,4 +14,10 @@
         android:orderInCategory="1"
         android:title="常用网站"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/mine_search"
+        android:icon="@drawable/ic_search"
+        android:orderInCategory="1"
+        android:title="搜索"
+        app:showAsAction="always" />
 </menu>

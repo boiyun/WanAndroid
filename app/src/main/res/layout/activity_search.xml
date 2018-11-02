@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activity.SearchActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/toolbar_theme"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:popupTheme="@style/OverFlowMenuTheme"
+            app:title=""
+            app:titleTextColor="@color/color_ffffff">
+
+            <EditText
+                android:id="@+id/et_quary"
+                android:layout_width="@dimen/qb_px_200"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:focusable="true"
+                android:hint="发现更多干货"
+                android:textColorHint="@color/color_60white" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_45"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/qb_px_15"
+        android:text="热门搜索"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_hot_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

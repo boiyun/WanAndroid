@@ -366,6 +366,9 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
             case R.id.mine_hot:
                 RouterUtil.goToActivity(RouterUrlManager.COMMON_WEBSITES);
                 break;
+            case R.id.mine_search:
+                RouterUtil.goToActivity(RouterUrlManager.SEARCH_ACTIVITY);
+                break;
             default:
                 break;
         }
@@ -376,6 +379,7 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
     public boolean onPrepareOptionsMenu(Menu menu) {
         int currentItem = viewpager.getCurrentItem();
         menu.findItem(R.id.mine_hot).setVisible(currentItem == 0);
+        menu.findItem(R.id.mine_search).setVisible(currentItem !=2);
         return super.onPrepareOptionsMenu(menu);
     }
 

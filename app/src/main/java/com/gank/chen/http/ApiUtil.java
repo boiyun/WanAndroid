@@ -17,6 +17,7 @@ import java.util.Map;
 
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
+import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -180,4 +181,22 @@ public interface ApiUtil {
     @Headers(WAN_HOST)
     @POST(UrlManager.COMMON_WEBSITE)
     Observable<BaseModel<List<CommonWebsiteModel>>> toGetCommonWebsite();
+
+    /**
+     * 获取热搜词
+     *
+     * @return List<SearchModel>
+     */
+    @Headers(WAN_HOST)
+    @GET(UrlManager.HOT_KEY)
+    Observable<BaseModel<List<CommonWebsiteModel>>> getHotSearchData();
+
+    /**
+     * 搜索
+     *
+     * @return ArticleModel
+     */
+    @Headers(WAN_HOST)
+    @POST(UrlManager.QUERY)
+    Observable<BaseModel<ArticleModel>> toQuary(@Path("page") int page, @Query("k") String key);
 }

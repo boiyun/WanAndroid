@@ -346,7 +346,10 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePrestener<V
      * @param mlist
      */
     protected void onLoadSucess(List mlist) {
-        smartRefresh.finishRefresh();
+        if (smartRefresh != null) {
+            smartRefresh.finishRefresh();
+        }
+
         page++;
     }
 
@@ -394,7 +397,10 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePrestener<V
      */
     @Override
     public void onLoadMoreFail(String msg) {
-        smartRefresh.finishLoadMore();
+        if (smartRefresh != null) {
+            smartRefresh.finishLoadMore();
+        }
+
         loadMoreFail(msg);
     }
 

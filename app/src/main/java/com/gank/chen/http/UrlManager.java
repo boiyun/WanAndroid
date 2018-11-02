@@ -55,4 +55,12 @@ public class UrlManager {
      * 获取常用网站
      */
     public static final String COMMON_WEBSITE = "friend/json";
+    /**
+     * 热搜词
+     */
+    public static final String HOT_KEY = "hotkey/json";
+    /**
+     * 搜索
+     */
+    public static final String QUERY = "article/query/{page}/json";
 }

@@ -7,6 +7,7 @@ import android.support.annotation.IntRange;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.MenuItem;
 
 import com.gank.chen.R;
@@ -214,7 +215,7 @@ public abstract class BaseNoNetActivity<V extends BaseView, P extends BasePreste
      */
     protected Toolbar initToolBar(String title, boolean rightImgIsShow) {
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(title);
+        toolbar.setTitle(Html.fromHtml(title));
         setSupportActionBar(toolbar);
 
         toolbar.setNavigationOnClickListener(v -> back());
