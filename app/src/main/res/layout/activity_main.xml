@@ -33,8 +33,8 @@
                 android:id="@+id/bottomnavigation"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                app:elevation="@dimen/qb_px_8"
                 android:background="@color/color_ffffff"
+                app:elevation="@dimen/qb_px_8"
                 app:itemBackground="@color/color_ffffff"
                 app:itemIconTint="@color/selector_item_color"
                 app:itemTextColor="@color/selector_item_color"
@@ -50,10 +50,10 @@
             android:layout_width="@dimen/qb_px_280"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:itemTextColor="@color/color_212121"
+            android:background="@color/color_ffffff"
             app:headerLayout="@layout/layout_mine_top"
-            app:menu="@menu/menu_main_drawerlayout"
-            android:background="@color/color_ffffff">
+            app:itemTextColor="@color/color_212121"
+            app:menu="@menu/menu_main_drawerlayout">
 
         </android.support.design.widget.NavigationView>
     </android.support.v4.widget.DrawerLayout>

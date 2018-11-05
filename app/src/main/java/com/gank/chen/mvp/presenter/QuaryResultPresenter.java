@@ -9,8 +9,6 @@ import com.gank.chen.http.subscriber.LodeMoreObserverSubscriber;
 import com.gank.chen.http.subscriber.SubscriberObserverProgress;
 import com.gank.chen.mvp.model.ArticleModel;
 import com.gank.chen.mvp.view.ImpChaptersListFragment;
-import com.gank.chen.mvp.view.OnLoadSuccessViewImp;
-import com.gank.chen.mvp.view.PullDownLoadMoreViewImp;
 import com.gank.chen.widget.StateView;
 
 /**

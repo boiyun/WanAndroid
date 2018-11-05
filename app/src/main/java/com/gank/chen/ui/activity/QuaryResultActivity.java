@@ -18,8 +18,6 @@ import com.gank.chen.mvp.model.ArticleListModel;
 import com.gank.chen.mvp.model.ArticleModel;
 import com.gank.chen.mvp.presenter.QuaryResultPresenter;
 import com.gank.chen.mvp.view.ImpChaptersListFragment;
-import com.gank.chen.mvp.view.OnLoadSuccessViewImp;
-import com.gank.chen.mvp.view.PullDownLoadMoreViewImp;
 import com.gank.chen.util.RouterUtil;
 import com.gank.chen.util.SharePreferenceUtil;
 import com.gank.chen.util.SnackbarUtils;
