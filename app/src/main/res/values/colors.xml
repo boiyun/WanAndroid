@@ -10,6 +10,7 @@
     <!--toast背景颜色-->
     <color name="bg_black_toast">#a9858585</color>
     <color name="color_60white">#99ffffff</color>
+    <color name="color_000000">#000000</color>
 
     <color name="color_f4f4f4">#f4f4f4</color>
     <color name="color_212121">#212121</color>

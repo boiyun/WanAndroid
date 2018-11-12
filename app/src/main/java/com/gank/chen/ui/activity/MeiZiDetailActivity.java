@@ -17,6 +17,7 @@ import com.gank.chen.common.RouterUrlManager;
 import com.gank.chen.util.FileUtils;
 import com.gank.chen.util.NativeShareUtil;
 import com.gank.chen.util.ToastUtils;
+import com.github.chrisbanes.photoview.PhotoView;
 
 import butterknife.BindView;
 import io.reactivex.Observer;
@@ -29,8 +30,7 @@ import io.reactivex.disposables.Disposable;
 public class MeiZiDetailActivity extends BaseNoNetActivity {
 
     @BindView(R.id.iv_meizi_detail)
-    ImageView ivMeiziDetail;
-    private String picurl;
+    PhotoView ivMeiziDetail;
     private Bitmap bitmap;
 
 
@@ -41,7 +41,7 @@ public class MeiZiDetailActivity extends BaseNoNetActivity {
 
     @Override
     public void initData() {
-        picurl = getIntent().getStringExtra("picurl");
+        String picurl = getIntent().getStringExtra("picurl");
         Glide.with(activity).load(picurl).asBitmap().into(new SimpleTarget<Bitmap>() {
             @Override
             public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
@@ -99,4 +99,6 @@ public class MeiZiDetailActivity extends BaseNoNetActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

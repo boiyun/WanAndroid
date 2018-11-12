@@ -51,7 +51,6 @@ public class CommonWebsitesActivity extends BaseActivity<OnLoadSuccessViewImp<Li
     @Override
     public void initView() {
         initToolBar("常用网站");
-        smartRefresh.setEnableRefresh(false);
         FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(activity);
         layoutManager.setFlexDirection(FlexDirection.ROW);
         layoutManager.setJustifyContent(JustifyContent.FLEX_START);

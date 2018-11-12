@@ -1,26 +1,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fl_common_web"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <include layout="@layout/toolbar_base_layout" />
 
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
-        android:id="@+id/smart_refresh"
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview_common_web"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/appbarlayout"
-        android:layout_marginBottom="@dimen/qb_px_15"
-        android:paddingLeft="@dimen/qb_px_10"
-        android:paddingRight="@dimen/qb_px_10">
+        android:layout_height="wrap_content">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview_common_web"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </android.support.v7.widget.RecyclerView>
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

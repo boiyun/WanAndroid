@@ -9,11 +9,9 @@
     <include layout="@layout/toolbar_base_layout" />
 
 
-    <ImageView
+    <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/iv_meizi_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:transitionName="@string/hello_blank_fragment"
         tools:src="@mipmap/icon_placeholder" />
 </LinearLayout>

@@ -27,6 +27,7 @@ public class MeiZiPicAdapter extends BaseQuickAdapter<MeiZi, MeiZiViewHolder> {
     protected void convert(MeiZiViewHolder helper, MeiZi item) {
         Glide.with(mContext).load(item.url)
                 .asBitmap()
+                .placeholder(R.mipmap.icon_empty_common)
                 .into(helper.itemIvMeizi);
     }
 }

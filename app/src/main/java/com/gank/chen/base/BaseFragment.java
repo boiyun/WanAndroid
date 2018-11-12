@@ -76,17 +76,19 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePrestener<V
         stateView = StateView.inject(baseview, hasActionBar);
         stateView.setOnRetryClickListener(this::initData);
     }
-public void initPageNum(int pageNums){
-        pageNum=pageNums;
-        page=pageNum;
-}
+
+    public void initPageNum(int pageNums) {
+        pageNum = pageNums;
+        page = pageNum;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(getViewLayoutId(), container, false);
 
-        pageNum=0;
-        page=pageNum;
+        pageNum = 0;
+        page = pageNum;
         unbinder = ButterKnife.bind(this, view);
         mProxy.onCreate((V) this);
         if (rxPermissions == null) {

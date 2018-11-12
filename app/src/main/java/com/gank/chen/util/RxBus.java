@@ -13,6 +13,8 @@ import io.reactivex.functions.Consumer;
 /**
  * Creat by chen on 2018/10/10
  * Describe:
+ *
+ * @author chenbo
  */
 public class RxBus {
     private Relay<Object> mBus = null;
@@ -59,6 +61,7 @@ public class RxBus {
 
     /**
      * 取消订阅
+     *
      * @param disposable
      */
     public void unregister(Disposable disposable) {
