@@ -5,13 +5,14 @@ import android.support.v4.view.ViewPager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gank.chen.R;
-import com.gank.chen.adapter.ChaptersPageAdapter;
+import com.gank.chen.adapter.ProjectsPageAdapter;
 import com.gank.chen.base.BaseFragment;
 import com.gank.chen.base.CreatePresenter;
 import com.gank.chen.common.RouterUrlManager;
 import com.gank.chen.mvp.model.ChaptersListModel;
-import com.gank.chen.mvp.presenter.ChaptersPresenter;
+import com.gank.chen.mvp.presenter.ProjectsPresenter;
 import com.gank.chen.mvp.view.ImpChaptersFragment;
+import com.gank.chen.mvp.view.ImpProjectsFragment;
 
 import java.util.List;
 import java.util.Objects;
@@ -24,9 +25,10 @@ import butterknife.BindView;
  *
  * @author chenbo
  */
-@CreatePresenter(ChaptersPresenter.class)
-@Route(path = RouterUrlManager.CHAPTERS_FRAGMENT)
-public class ChaptersFragment extends BaseFragment<ImpChaptersFragment, ChaptersPresenter> implements ImpChaptersFragment {
+@CreatePresenter(ProjectsPresenter.class)
+@Route(path = RouterUrlManager.PROJECT_FRAGMENT)
+public class ProjectFragment extends BaseFragment<ImpProjectsFragment, ProjectsPresenter>
+        implements ImpProjectsFragment {
     @BindView(R.id.order_tablayout)
     TabLayout orderTablayout;
     @BindView(R.id.order_viewPager)
@@ -39,7 +41,7 @@ public class ChaptersFragment extends BaseFragment<ImpChaptersFragment, Chapters
 
     @Override
     public void initData() {
-        getPresenter().getChaptersList(getActivity(), stateView);
+        getPresenter().getProjects(getActivity(), stateView);
     }
 
     @Override
@@ -67,7 +69,8 @@ public class ChaptersFragment extends BaseFragment<ImpChaptersFragment, Chapters
     @Override
     public void onLoadChapterSucess(List<ChaptersListModel> chaptersListModel) {
 
-        ChaptersPageAdapter adapter = new ChaptersPageAdapter(Objects.requireNonNull(getActivity()).getSupportFragmentManager(), chaptersListModel);
+        ProjectsPageAdapter adapter = new ProjectsPageAdapter(Objects.requireNonNull(getActivity()).getSupportFragmentManager()
+                , chaptersListModel);
         orderTablayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         for (int i = 0; i < chaptersListModel.size(); i++) {
             orderTablayout.addTab(orderTablayout.newTab().setText(chaptersListModel.get(i).getName()));

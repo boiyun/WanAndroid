@@ -27,8 +27,10 @@ public class RouterUrlManager {
 
     //fragment
 
-    public static final String ANDROID_FRAGMENT = "/fragment/ChaptersListFragment";
+    public static final String CHAPTERSLIST_FRAGMENT = "/fragment/ChaptersListFragment";
+    public static final String PROJECTLIST_FRAGMENT = "/fragment/ProjectListFragment";
     public static final String CHAPTERS_FRAGMENT = "/fragment/ChaptersFragment";
+    public static final String PROJECT_FRAGMENT = "/fragment/ProjectFragment";
     public static final String MAIN_FRAGMENT = "/fragment/MainFragment";
     public static final String MEIZI_FRAGMENT = "/fragment/MeiZiFragment";
 }

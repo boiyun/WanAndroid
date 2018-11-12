@@ -159,12 +159,11 @@ public interface ApiUtil {
      * @return List<ChaptersListModel>
      */
     @Headers(WAN_HOST)
-    @POST(UrlManager.CHAPTERS)
+    @GET(UrlManager.CHAPTERS)
     Observable<BaseModel<List<ChaptersListModel>>> toGetChapter();
 
-
     /**
-     * 收藏站内文章
+     * 查看某个公众号历史数据
      *
      * @param id
      * @return BaseModel
@@ -172,6 +171,25 @@ public interface ApiUtil {
     @Headers(WAN_HOST)
     @GET(UrlManager.CHAPTERS_LIST)
     Observable<BaseModel<ArticleModel>> toGetChaptersList(@Path("id") int id, @Path("page") int page);
+
+    /**
+     * 获取项目列表
+     *
+     * @return List<ChaptersListModel>
+     */
+    @Headers(WAN_HOST)
+    @GET(UrlManager.PROJECT)
+    Observable<BaseModel<List<ChaptersListModel>>> toGetProject();
+
+    /**
+     * 项目列表数据
+     *
+     * @param cid
+     * @return BaseModel
+     */
+    @Headers(WAN_HOST)
+    @GET(UrlManager.PROJECTS_LIST)
+    Observable<BaseModel<ArticleModel>> toGetProjectList(@Path("page") int page,@Query("cid") int cid );
 
     /**
      * 获取常用网站

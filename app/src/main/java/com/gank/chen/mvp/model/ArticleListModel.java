@@ -32,7 +32,9 @@ public class ArticleListModel {
     private int userId;
     private int visible;
     private int zan;
-    //originId 代表的是你收藏之前的那篇文章本身的id； 但是收藏支持主动添加，这种情况下，没有originId则为-1
+    /**
+     * originId 代表的是你收藏之前的那篇文章本身的id； 但是收藏支持主动添加，这种情况下，没有originId则为-1
+     */
     private int originId;
 
     public int getOriginId() {

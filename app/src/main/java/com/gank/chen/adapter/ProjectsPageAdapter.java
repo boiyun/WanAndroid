@@ -15,17 +15,17 @@ import java.util.List;
  * @date 2017/12/16
  */
 
-public class ChaptersPageAdapter extends FragmentStatePagerAdapter {
+public class ProjectsPageAdapter extends FragmentStatePagerAdapter {
     private List<ChaptersListModel> mhomeTab;
 
-    public ChaptersPageAdapter(FragmentManager fm, List<ChaptersListModel> fragments) {
+    public ProjectsPageAdapter(FragmentManager fm, List<ChaptersListModel> fragments) {
         super(fm);
         this.mhomeTab = fragments;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return FragmentFactory.creatChaptersFragment(mhomeTab.get(position));
+        return FragmentFactory.creatProjectFragment(mhomeTab.get(position));
     }
 
     @Override
@@ -33,10 +33,6 @@ public class ChaptersPageAdapter extends FragmentStatePagerAdapter {
         return mhomeTab.size();
     }
 
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-
-    }
 
     @Override
     public CharSequence getPageTitle(int position) {

@@ -14,16 +14,16 @@ import java.util.List;
  */
 
 public class MainPageAdapter extends FragmentStatePagerAdapter {
-    private List mFragments;
+    private List<Fragment> mFragments;
 
-    public MainPageAdapter(FragmentManager fm, List fragments) {
+    public MainPageAdapter(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
         this.mFragments = fragments;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return (Fragment) mFragments.get(position);
+        return mFragments.get(position);
     }
 
     @Override

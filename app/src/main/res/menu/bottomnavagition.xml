@@ -16,5 +16,9 @@
         android:id="@+id/tab_three"
         android:icon="@drawable/ic_tab_meizi"
         android:title="@string/tab_meizi" />
+    <item
+        android:id="@+id/tab_four"
+        android:icon="@drawable/ic_project"
+        android:title="@string/tab_project" />
 
 </menu>

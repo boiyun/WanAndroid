@@ -43,6 +43,7 @@ import com.gank.chen.util.RouterUtil;
 import com.gank.chen.util.SharePreferenceUtil;
 import com.gank.chen.util.SnackbarUtils;
 import com.gank.chen.util.ToastUtils;
+import com.gank.chen.widget.BottomNavigationViewHelper;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;
@@ -123,6 +124,7 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
         tvUsername = headerView.findViewById(R.id.tv_username);
         tvUsername.setOnClickListener(this);
         ivUserheader.setOnClickListener(this);
+        BottomNavigationViewHelper.disableShiftMode(bottomnavigation);
         bottomnavigation.setOnNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
             switch (itemId) {
@@ -135,6 +137,9 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
                     return true;
                 case R.id.tab_three:
                     clickTab(2);
+                    return true;
+                case R.id.tab_four:
+                    clickTab(3);
                     return true;
                 default:
                     break;
@@ -153,6 +158,7 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
             @Override
             public void onPageSelected(int position) {
                 changePage(position);
+                supportInvalidateOptionsMenu();
             }
 
             @Override
@@ -161,11 +167,12 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
         });
     }
 
-    private List initFragment() {
+    private List<Fragment> initFragment() {
         List<Fragment> mFragments = new ArrayList<>();
         mFragments.add(RouterUtil.getFragment(RouterUrlManager.MAIN_FRAGMENT));
         mFragments.add(RouterUtil.getFragment(RouterUrlManager.CHAPTERS_FRAGMENT));
         mFragments.add(RouterUtil.getFragment(RouterUrlManager.MEIZI_FRAGMENT));
+        mFragments.add(RouterUtil.getFragment(RouterUrlManager.PROJECT_FRAGMENT));
         return mFragments;
     }
 
@@ -180,17 +187,18 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
             case 0:
                 bottomnavigation.setSelectedItemId(R.id.tab_one);
                 getSupportActionBar().setTitle(getResources().getString(R.string.tab_home));
-                supportInvalidateOptionsMenu();
                 break;
             case 1:
                 bottomnavigation.setSelectedItemId(R.id.tab_two);
                 getSupportActionBar().setTitle(getResources().getString(R.string.tab_chapter));
-                supportInvalidateOptionsMenu();
                 break;
             case 2:
                 bottomnavigation.setSelectedItemId(R.id.tab_three);
                 getSupportActionBar().setTitle(getResources().getString(R.string.tab_meizi));
-                supportInvalidateOptionsMenu();
+                break;
+            case 3:
+                bottomnavigation.setSelectedItemId(R.id.tab_four);
+                getSupportActionBar().setTitle(getResources().getString(R.string.tab_project));
                 break;
 
             default:
@@ -379,7 +387,7 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
     public boolean onPrepareOptionsMenu(Menu menu) {
         int currentItem = viewpager.getCurrentItem();
         menu.findItem(R.id.mine_hot).setVisible(currentItem == 0);
-        menu.findItem(R.id.mine_search).setVisible(currentItem !=2);
+        menu.findItem(R.id.mine_search).setVisible(currentItem != 2);
         return super.onPrepareOptionsMenu(menu);
     }
 

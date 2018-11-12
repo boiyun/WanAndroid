@@ -207,3 +207,7 @@
  -keepnames class * {
      @com.alibaba.android.arouter.facade.annotation.Autowired <fields>;
  }
+
+ -keepclassmembers class android.support.design.internal.BottomNavigationMenuView {
+     boolean mShiftingMode;
+ }

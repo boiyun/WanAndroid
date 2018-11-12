@@ -48,9 +48,17 @@ public class UrlManager {
      */
     public static final String CHAPTERS = "wxarticle/chapters/json";
     /**
+     * 获取项目列表
+     */
+    public static final String PROJECT = "project/tree/json";
+    /**
      * 查看某个公众号历史数据
      */
     public static final String CHAPTERS_LIST = "wxarticle/list/{id}/{page}/json";
+    /**
+     * 查看项目列表数据
+     */
+    public static final String PROJECTS_LIST = "project/list/{page}/json";
     /**
      * 获取常用网站
      */

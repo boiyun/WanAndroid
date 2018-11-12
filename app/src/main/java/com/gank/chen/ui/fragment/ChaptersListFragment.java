@@ -34,7 +34,7 @@ import butterknife.BindView;
  * @author chenbo
  */
 @CreatePresenter(ChaptersListPresenter.class)
-@Route(path = RouterUrlManager.ANDROID_FRAGMENT)
+@Route(path = RouterUrlManager.CHAPTERSLIST_FRAGMENT)
 public class ChaptersListFragment extends BaseFragment<ImpChaptersListFragment, ChaptersListPresenter>
         implements ImpChaptersListFragment {
 
