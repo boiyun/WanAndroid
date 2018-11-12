@@ -141,6 +141,9 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
                 case R.id.tab_four:
                     clickTab(3);
                     return true;
+                case R.id.tab_five:
+                    clickTab(4);
+                    return true;
                 default:
                     break;
             }
@@ -173,6 +176,7 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
         mFragments.add(RouterUtil.getFragment(RouterUrlManager.CHAPTERS_FRAGMENT));
         mFragments.add(RouterUtil.getFragment(RouterUrlManager.MEIZI_FRAGMENT));
         mFragments.add(RouterUtil.getFragment(RouterUrlManager.PROJECT_FRAGMENT));
+        mFragments.add(RouterUtil.getFragment(RouterUrlManager.PROJECT_FRAGMENT));
         return mFragments;
     }
 
@@ -200,7 +204,10 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
                 bottomnavigation.setSelectedItemId(R.id.tab_four);
                 getSupportActionBar().setTitle(getResources().getString(R.string.tab_project));
                 break;
-
+            case 4:
+                bottomnavigation.setSelectedItemId(R.id.tab_five);
+                getSupportActionBar().setTitle(getResources().getString(R.string.tab_navigation));
+                break;
             default:
                 break;
         }

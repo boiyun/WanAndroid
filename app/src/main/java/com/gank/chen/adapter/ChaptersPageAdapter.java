@@ -1,8 +1,10 @@
 package com.gank.chen.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
 import android.view.ViewGroup;
 
 import com.gank.chen.mvp.model.ChaptersListModel;
@@ -33,10 +35,10 @@ public class ChaptersPageAdapter extends FragmentStatePagerAdapter {
         return mhomeTab.size();
     }
 
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-
-    }
+//    @Override
+////    public int getItemPosition(@NonNull Object object) {
+////        return PagerAdapter.POSITION_NONE;
+////    }
 
     @Override
     public CharSequence getPageTitle(int position) {

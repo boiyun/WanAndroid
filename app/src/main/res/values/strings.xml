@@ -42,6 +42,7 @@
     <string name="tab_chapter">公众号</string>
     <string name="tab_meizi">福利</string>
     <string name="tab_project">项目</string>
+    <string name="tab_navigation">导航</string>
     <string name="title_activity_about_us">AboutUsActivity</string>
     <string name="action_settings">Settings</string>
     <string name="bye_burger_float_behavior">com.gank.chen.widget.behavior.ByeBurgerFloatButtonBehavior</string>

@@ -11,7 +11,6 @@ import com.gank.chen.base.CreatePresenter;
 import com.gank.chen.common.RouterUrlManager;
 import com.gank.chen.mvp.model.ChaptersListModel;
 import com.gank.chen.mvp.presenter.ProjectsPresenter;
-import com.gank.chen.mvp.view.ImpChaptersFragment;
 import com.gank.chen.mvp.view.ImpProjectsFragment;
 
 import java.util.List;

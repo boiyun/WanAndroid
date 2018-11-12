@@ -26,7 +26,8 @@ import butterknife.BindView;
  */
 @CreatePresenter(ChaptersPresenter.class)
 @Route(path = RouterUrlManager.CHAPTERS_FRAGMENT)
-public class ChaptersFragment extends BaseFragment<ImpChaptersFragment, ChaptersPresenter> implements ImpChaptersFragment {
+public class ChaptersFragment extends BaseFragment<ImpChaptersFragment, ChaptersPresenter>
+        implements ImpChaptersFragment {
     @BindView(R.id.order_tablayout)
     TabLayout orderTablayout;
     @BindView(R.id.order_viewPager)

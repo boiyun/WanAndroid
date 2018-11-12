@@ -20,5 +20,8 @@
         android:id="@+id/tab_four"
         android:icon="@drawable/ic_project"
         android:title="@string/tab_project" />
-
+    <item
+        android:id="@+id/tab_five"
+        android:icon="@drawable/ic_navigation"
+        android:title="@string/tab_navigation" />
 </menu>
