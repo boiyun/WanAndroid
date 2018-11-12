@@ -1,74 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/rl_item_main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_white">
+    android:layout_marginBottom="@dimen/qb_px_8"
+    android:layout_marginEnd="@dimen/qb_px_12"
+    android:layout_marginStart="@dimen/qb_px_12"
+    android:layout_marginTop="@dimen/qb_px_8"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/color_60white"
+    app:cardCornerRadius="@dimen/qb_px_3"
+    app:cardElevation="@dimen/qb_px_2">
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/qb_px_15"
-        android:layout_marginRight="@dimen/qb_px_10"
-        android:layout_marginTop="@dimen/qb_px_10"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:textColor="@color/color_212121"
-        android:textSize="15sp"
-        tools:text="标题标题标题标题标题标题标题标题" />
-
-    <TextView
-        android:id="@+id/tv_user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/tv_title"
-        android:layout_below="@id/tv_title"
-        android:layout_marginRight="@dimen/qb_px_10"
-        android:layout_marginTop="@dimen/qb_px_10"
-        android:maxLines="1"
-        android:textColor="@color/colorAccent"
-        android:textSize="13sp"
-        tools:text="姓名" />
-
-
-    <ImageView
-        android:id="@+id/iv_like"
-        android:layout_width="@dimen/qb_px_30"
-        android:layout_height="@dimen/qb_px_30"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/tv_user_name"
-        android:layout_marginLeft="@dimen/qb_px_15"
-        android:layout_marginTop="@dimen/qb_px_10"
-        android:padding="@dimen/qb_px_5"
-        android:src="@mipmap/icon_unlike" />
-
-    <ImageView
-        android:id="@+id/iv_new"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/iv_like"
-        android:layout_alignTop="@id/iv_like"
-        android:layout_marginLeft="@dimen/qb_px_10"
-        android:src="@drawable/ic_new" />
-
-    <TextView
-        android:id="@+id/tv_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/iv_like"
-        android:layout_marginRight="@dimen/qb_px_15"
-        android:textColor="@color/color_757575"
-        android:textSize="13sp"
-        tools:text="2018dddddddd" />
-
-    <View
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/qb_px_1"
-        android:layout_alignBottom="@id/iv_like"
-        android:background="@color/color_DDDEE3" />
-</RelativeLayout>
+        android:layout_height="@dimen/qb_px_180"
+        android:orientation="horizontal"
+        android:padding="@dimen/qb_px_12">
+
+        <ImageView
+            android:id="@+id/item_project_list_iv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:contentDescription="@null"
+            android:src="@mipmap/ic_launcher" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/qb_px_16"
+            android:layout_marginStart="@dimen/qb_px_16"
+            android:layout_weight="5">
+
+            <TextView
+                android:id="@+id/item_project_list_title_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/qb_px_6"
+                android:drawablePadding="@dimen/qb_px_5"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textColor="@color/color_212121"
+                android:textSize="@dimen/sp_16"
+                tools:text="【开源完整项目】diycode客户端" />
+
+            <TextView
+                android:id="@+id/item_project_list_content_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/item_project_list_title_tv"
+                android:layout_marginTop="@dimen/qb_px_16"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:textColor="@color/color_757575"
+                tools:text="Diycode 社区客户端，可以更方便的在手机上查看社区信息。应用采用了数据多级缓存，并且实现了离线浏览(访问过一次的页面会被缓存下来，没有网络也可查看)，相比于网页版，在一定程度上可以" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/item_project_list_content_tv">
+
+                <TextView
+                    android:id="@+id/item_project_list_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:textColor="@color/color_757575"
+                    tools:text="2018-01-29" />
+
+                <TextView
+                    android:id="@+id/item_project_list_author_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/qb_px_5"
+                    android:layout_marginStart="@dimen/qb_px_5"
+                    android:layout_toEndOf="@id/item_project_list_time_tv"
+                    android:layout_toRightOf="@id/item_project_list_time_tv"
+                    android:gravity="center"
+                    android:textColor="@color/color_757575"
+                    tools:text="GcsSloop" />
+
+                <TextView
+                    android:id="@+id/item_project_list_install_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/qb_px_5"
+                    android:layout_marginStart="@dimen/qb_px_5"
+                    android:textColor="@color/colorAccent"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

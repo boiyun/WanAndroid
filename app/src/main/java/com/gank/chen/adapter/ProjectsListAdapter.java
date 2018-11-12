@@ -21,7 +21,7 @@ public class ProjectsListAdapter extends BaseQuickAdapter<ArticleListModel, Base
 
     @Override
     protected void convert(BaseViewHolder helper, ArticleListModel item) {
-        helper.setText(R.id.tv_title, item.getTitle());
+        helper.setText(R.id.item_project_list_title_tv, item.getTitle());
     }
 
 }
