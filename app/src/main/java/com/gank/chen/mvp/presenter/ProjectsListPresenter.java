@@ -45,4 +45,39 @@ public class ProjectsListPresenter extends BasePrestener<ImpProjectsListFragment
         });
     }
 
+    /**
+     * 收藏文章
+     *
+     * @param context
+     * @param id
+     * @param position
+     */
+    public void onCollect(Context context, int id, int position) {
+        ApiRetrofit.setObservableBooleanSubscribe(apiUtil.toCollect(id), new SubscriberObserverProgress<Boolean>(context) {
+            @Override
+            public void onSuccess(Boolean aBoolean) {
+                if (aBoolean) {
+                    getView().onCollectSucess(position);
+                }
+            }
+        });
+    }
+
+    /**
+     * 取消收藏文章
+     *
+     * @param context
+     * @param id
+     * @param position
+     */
+    public void onUnCollect(Context context, int id, int position) {
+        ApiRetrofit.setObservableBooleanSubscribe(apiUtil.toUnCollect(id), new SubscriberObserverProgress<Boolean>(context) {
+            @Override
+            public void onSuccess(Boolean aBoolean) {
+                if (aBoolean) {
+                    getView().onUnCollectSucess(position);
+                }
+            }
+        });
+    }
 }

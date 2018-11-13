@@ -68,7 +68,7 @@ public class ProjectFragment extends BaseFragment<ImpProjectsFragment, ProjectsP
     @Override
     public void onLoadChapterSucess(List<ChaptersListModel> chaptersListModel) {
 
-        ProjectsPageAdapter adapter = new ProjectsPageAdapter(Objects.requireNonNull(getActivity()).getSupportFragmentManager()
+        ProjectsPageAdapter adapter = new ProjectsPageAdapter(getChildFragmentManager()
                 , chaptersListModel);
         orderTablayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         for (int i = 0; i < chaptersListModel.size(); i++) {

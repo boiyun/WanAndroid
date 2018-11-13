@@ -33,4 +33,5 @@ public class RouterUrlManager {
     public static final String PROJECT_FRAGMENT = "/fragment/ProjectFragment";
     public static final String MAIN_FRAGMENT = "/fragment/MainFragment";
     public static final String MEIZI_FRAGMENT = "/fragment/MeiZiFragment";
+    public static final String NAVIGATION_FRAGMENT = "/fragment/NavigationFragment";
 }

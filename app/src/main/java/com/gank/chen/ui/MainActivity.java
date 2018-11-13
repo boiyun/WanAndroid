@@ -176,7 +176,7 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
         mFragments.add(RouterUtil.getFragment(RouterUrlManager.CHAPTERS_FRAGMENT));
         mFragments.add(RouterUtil.getFragment(RouterUrlManager.MEIZI_FRAGMENT));
         mFragments.add(RouterUtil.getFragment(RouterUrlManager.PROJECT_FRAGMENT));
-        mFragments.add(RouterUtil.getFragment(RouterUrlManager.PROJECT_FRAGMENT));
+        mFragments.add(RouterUtil.getFragment(RouterUrlManager.NAVIGATION_FRAGMENT));
         return mFragments;
     }
 

@@ -71,4 +71,8 @@ public class UrlManager {
      * 搜索
      */
     public static final String QUERY = "article/query/{page}/json";
+    /**
+     * 导航数据
+     */
+    public static final String NAVIGATION = "navi/json";
 }

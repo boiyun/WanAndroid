@@ -8,6 +8,7 @@ import com.gank.chen.mvp.model.CarsListModel;
 import com.gank.chen.mvp.model.ChaptersListModel;
 import com.gank.chen.mvp.model.CommonWebsiteModel;
 import com.gank.chen.mvp.model.MeiZi;
+import com.gank.chen.mvp.model.NavigationModel;
 import com.gank.chen.mvp.model.RegisterModel;
 import com.gank.chen.mvp.model.VideoBean;
 
@@ -217,4 +218,13 @@ public interface ApiUtil {
     @Headers(WAN_HOST)
     @POST(UrlManager.QUERY)
     Observable<BaseModel<ArticleModel>> toQuary(@Path("page") int page, @Query("k") String key);
+
+    /**
+     * 导航数据
+     *
+     * @return List<NavigationModel>
+     */
+    @Headers(WAN_HOST)
+    @GET(UrlManager.NAVIGATION)
+    Observable<BaseModel<List<NavigationModel>>> getNavigationData();
 }

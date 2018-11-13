@@ -68,7 +68,7 @@ public class ChaptersFragment extends BaseFragment<ImpChaptersFragment, Chapters
     @Override
     public void onLoadChapterSucess(List<ChaptersListModel> chaptersListModel) {
 
-        ChaptersPageAdapter adapter = new ChaptersPageAdapter(Objects.requireNonNull(getActivity()).getSupportFragmentManager(), chaptersListModel);
+        ChaptersPageAdapter adapter = new ChaptersPageAdapter(getChildFragmentManager(), chaptersListModel);
         orderTablayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         for (int i = 0; i < chaptersListModel.size(); i++) {
             orderTablayout.addTab(orderTablayout.newTab().setText(chaptersListModel.get(i).getName()));

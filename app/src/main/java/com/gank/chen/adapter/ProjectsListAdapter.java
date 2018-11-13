@@ -1,7 +1,9 @@
 package com.gank.chen.adapter;
 
-import android.text.Html;
 
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.gank.chen.R;
@@ -21,7 +23,19 @@ public class ProjectsListAdapter extends BaseQuickAdapter<ArticleListModel, Base
 
     @Override
     protected void convert(BaseViewHolder helper, ArticleListModel item) {
-        helper.setText(R.id.item_project_list_title_tv, item.getTitle());
+        helper.setText(R.id.tv_title, item.getTitle())
+                .setText(R.id.tv_des, item.getDesc())
+                .setText(R.id.tv_user_name, item.getAuthor())
+                .setText(R.id.tv_time, item.getNiceDate())
+                .addOnClickListener(R.id.iv_like);
+
+        Glide.with(mContext).load(item.getEnvelopePic()).into((ImageView) helper.getView(R.id.iv_project_pic));
+
+        if (item.isCollect()) {
+            helper.setImageResource(R.id.iv_like, R.mipmap.icon_like);
+        } else {
+            helper.setImageResource(R.id.iv_like, R.mipmap.icon_unlike);
+        }
     }
 
 }

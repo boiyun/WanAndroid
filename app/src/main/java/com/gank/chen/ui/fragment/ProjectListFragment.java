@@ -4,6 +4,7 @@ package com.gank.chen.ui.fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -12,12 +13,15 @@ import com.gank.chen.R;
 import com.gank.chen.adapter.ProjectsListAdapter;
 import com.gank.chen.base.BaseFragment;
 import com.gank.chen.base.CreatePresenter;
+import com.gank.chen.common.ConstantMap;
 import com.gank.chen.common.RouterUrlManager;
 import com.gank.chen.mvp.model.ArticleListModel;
 import com.gank.chen.mvp.model.ArticleModel;
 import com.gank.chen.mvp.presenter.ProjectsListPresenter;
 import com.gank.chen.mvp.view.ImpProjectsListFragment;
 import com.gank.chen.util.RouterUtil;
+import com.gank.chen.util.SharePreferenceUtil;
+import com.gank.chen.util.SnackbarUtils;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
 import java.util.List;
@@ -70,6 +74,43 @@ public class ProjectListFragment extends BaseFragment<ImpProjectsListFragment, P
                 RouterUtil.goToActivity(RouterUrlManager.DETAIL, bundle);
             }
         });
+        adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                String userPhone = SharePreferenceUtil.getString(ConstantMap.USER_PHONE, "");
+                if (!TextUtils.isEmpty(userPhone)) {
+                    ArticleListModel data = (ArticleListModel) adapter.getData().get(position);
+
+                    if (data.isCollect()) {
+                        getPresenter().onUnCollect(getActivity(), data.getId(), position);
+                    } else {
+                        getPresenter().onCollect(getActivity(), data.getId(), position);
+                    }
+                } else {
+                    SnackbarUtils.with(recyclerviewHomePic).setMessage("请先登录哦~")
+                            .setAction("去登录", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    RouterUtil.goToActivity(RouterUrlManager.LOGIN);
+                                }
+                            })
+                            .showWarning();
+                }
+
+            }
+        });
+    }
+
+    @Override
+    public void onCollectSucess(int position) {
+        adapter.getData().get(position).setCollect(true);
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onUnCollectSucess(int position) {
+        adapter.getData().get(position).setCollect(false);
+        adapter.notifyDataSetChanged();
     }
 
     @Override

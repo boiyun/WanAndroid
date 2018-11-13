@@ -9,19 +9,19 @@ import com.gank.chen.mvp.model.ArticleModel;
  */
 
 public interface ImpProjectsListFragment extends BaseView {
-//    /**
-//     * 收藏成功
-//     *
-//     * @param position
-//     */
-//    void onCollectSucess(int position);
-//
-//    /**
-//     * 取消收藏成功
-//     *
-//     * @param position
-//     */
-//    void onUnCollectSucess(int position);
+    /**
+     * 收藏成功
+     *
+     * @param position
+     */
+    void onCollectSucess(int position);
+
+    /**
+     * 取消收藏成功
+     *
+     * @param position
+     */
+    void onUnCollectSucess(int position);
 
     /**
      * 加载成功
