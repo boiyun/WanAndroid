@@ -61,6 +61,7 @@ public class ChaptersListFragment extends BaseFragment<ImpChaptersListFragment, 
 
     @Override
     public void initView() {
+        initPageNum(1);
         recyclerviewHomePic.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new MainArticleAdapter(videoBeanList);
         recyclerviewHomePic.setAdapter(adapter);
