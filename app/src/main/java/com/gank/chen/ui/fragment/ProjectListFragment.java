@@ -61,6 +61,7 @@ public class ProjectListFragment extends BaseFragment<ImpProjectsListFragment, P
 
     @Override
     public void initView() {
+        initPageNum(1);
         recyclerviewHomePic.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new ProjectsListAdapter(videoBeanList);
         recyclerviewHomePic.setAdapter(adapter);
