@@ -297,7 +297,7 @@ public class LoginActivity extends BaseNoNetActivity<OnLoadSuccessViewImp<Regist
             SharePreferenceUtil.setBoolean(ConstantMap.IS_LOGIN, true);
             SharePreferenceUtil.setString(ConstantMap.USER_PHONE, registerModel.getUsername());
             SharePreferenceUtil.setString(ConstantMap.LOGINUSERNAME, ConstantMap.LOGINUSERNAME+registerModel.getUsername());
-            SharePreferenceUtil.setString(ConstantMap.LOGINUSERPASSWORD, ConstantMap.LOGINUSERPASSWORD+registerModel.getPassword());
+            SharePreferenceUtil.setString(ConstantMap.LOGINUSERPASSWORD, ConstantMap.LOGINUSERPASSWORD+registerModel.getPasswordNative());
             RxBus.getDefault().post(new Event<>(Event.EVENT_LOGIN_SUCCESS, registerModel.getUsername()));
             finish();
         }

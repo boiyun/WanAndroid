@@ -20,9 +20,18 @@ public class RegisterModel {
     private String token;
     private int type;
     private String password;
+    private String passwordNative;
     private int id;
     private String icon;
     private String email;
+
+    public String getPasswordNative() {
+        return passwordNative;
+    }
+
+    public void setPasswordNative(String passwordNative) {
+        this.passwordNative = passwordNative;
+    }
 
     public String getUsername() {
         return username;

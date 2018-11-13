@@ -26,6 +26,7 @@ public class LoginPresenter extends BasePrestener<OnLoadSuccessViewImp<RegisterM
         ApiRetrofit.setObservableSubscribe(apiUtil.toLogin(map), new SubscriberObserverProgress<RegisterModel>(context) {
             @Override
             public void onSuccess(RegisterModel t) {
+                t.setPasswordNative(password);
                 getView().onLoadSucess(t);
             }
         });
