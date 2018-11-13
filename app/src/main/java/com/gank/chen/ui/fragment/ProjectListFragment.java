@@ -78,26 +78,14 @@ public class ProjectListFragment extends BaseFragment<ImpProjectsListFragment, P
         adapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                String userPhone = SharePreferenceUtil.getString(ConstantMap.USER_PHONE, "");
-                if (!TextUtils.isEmpty(userPhone)) {
+                if (RouterUtil.checkLoginState(recyclerviewHomePic)) {
                     ArticleListModel data = (ArticleListModel) adapter.getData().get(position);
-
                     if (data.isCollect()) {
                         getPresenter().onUnCollect(getActivity(), data.getId(), position);
                     } else {
                         getPresenter().onCollect(getActivity(), data.getId(), position);
                     }
-                } else {
-                    SnackbarUtils.with(recyclerviewHomePic).setMessage("请先登录哦~")
-                            .setAction("去登录", new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    RouterUtil.goToActivity(RouterUrlManager.LOGIN);
-                                }
-                            })
-                            .showWarning();
                 }
-
             }
         });
     }

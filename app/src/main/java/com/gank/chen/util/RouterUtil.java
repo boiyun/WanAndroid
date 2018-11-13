@@ -3,10 +3,13 @@ package com.gank.chen.util;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
+import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.gank.chen.common.BaseLoginInterceptor;
 import com.gank.chen.common.ConstantMap;
+import com.gank.chen.common.RouterUrlManager;
 
 /**
  * Creat by chen on 2018/10/10
@@ -55,5 +58,22 @@ public class RouterUtil {
      */
     public static Fragment getFragment(String url) {
         return (Fragment) ARouter.getInstance().build(url).navigation();
+    }
+
+    public static boolean checkLoginState(View view) {
+        String userPhone = SharePreferenceUtil.getString(ConstantMap.USER_PHONE, "");
+        if (!TextUtils.isEmpty(userPhone)) {
+            return true;
+        } else {
+            SnackbarUtils.with(view).setMessage("请先登录哦~")
+                    .setAction("去登录", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            RouterUtil.goToActivity(RouterUrlManager.LOGIN);
+                        }
+                    })
+                    .showWarning();
+            return false;
+        }
     }
 }
