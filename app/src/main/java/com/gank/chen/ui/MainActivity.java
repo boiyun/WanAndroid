@@ -244,7 +244,7 @@ public class MainActivity extends BaseNoNetActivity<ImpMainActivity, MainActivit
                 RouterUtil.goToActivity(RouterUrlManager.MINE_COLLECTION);
                 break;
             case R.id.mine_message:
-                RouterUtil.goToActivity(RouterUrlManager.COMMON_WEBSITES);
+                RouterUtil.goToActivity(RouterUrlManager.TODOLIST_ACTIVITY);
                 break;
             case R.id.mine_setting:
                 RouterUtil.goToActivity(RouterUrlManager.SETTING);

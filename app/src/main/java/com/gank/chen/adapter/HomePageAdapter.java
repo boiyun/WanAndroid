@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import com.gank.chen.ui.fragment.FragmentFactory;
 
 /**
- *
  * @author chen
  * @date 2017/12/16
  */
@@ -23,17 +22,12 @@ public class HomePageAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return null;
+        return FragmentFactory.creatTodoFragment();
     }
 
     @Override
     public int getCount() {
         return mhomeTab.length;
-    }
-
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-
     }
 
     @Override

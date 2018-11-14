@@ -37,4 +37,8 @@ public class FragmentFactory {
         return fragment;
     }
 
+    public static Fragment creatTodoFragment() {
+        Fragment fragment = RouterUtil.getFragment(RouterUrlManager.MEIZI_FRAGMENT);
+        return fragment;
+    }
 }

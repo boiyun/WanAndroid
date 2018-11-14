@@ -15,8 +15,8 @@ import butterknife.BindView;
 /**
  * @author chenbo
  */
-@Route(path = RouterUrlManager.MINE_ORDER, extras = ConstantMap.LOGIN_EXTRA)
-public class MineOrderActivity extends BaseNoNetActivity {
+@Route(path = RouterUrlManager.TODOLIST_ACTIVITY, extras = ConstantMap.LOGIN_EXTRA)
+public class ToDoListActivity extends BaseNoNetActivity {
 
     @BindView(R.id.order_tablayout)
     TabLayout orderTablayout;
@@ -42,7 +42,7 @@ public class MineOrderActivity extends BaseNoNetActivity {
 
     @Override
     public void initView() {
-        initToolBar("我的订单", false);
+        initToolBar("todo", false);
         orderViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(orderTablayout));
         orderTablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

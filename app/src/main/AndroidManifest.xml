@@ -73,7 +73,7 @@
             android:name=".ui.activity.MineCollectionsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.MineOrderActivity"
+            android:name=".ui.activity.ToDoListActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.AboutUsActivity"
@@ -90,6 +90,7 @@
         <activity
             android:name=".ui.activity.QuaryResultActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.TodoActivity"></activity>
     </application>
 
 </manifest>

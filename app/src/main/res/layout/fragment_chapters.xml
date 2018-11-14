@@ -10,11 +10,11 @@
         android:id="@+id/order_tablayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/qb_px_45"
-        app:tabBackground="@color/colorPrimary"
-        app:tabIndicatorColor="@color/color_ff4081"
-        app:tabSelectedTextColor="@color/color_ffffff"
+        app:tabBackground="@color/color_ffffff"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/color_212121"
         app:tabTextAppearance="@style/TabLayoutTextStyle"
-        app:tabTextColor="@color/color_60white" />
+        app:tabTextColor="@color/color_757575" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/order_viewPager"

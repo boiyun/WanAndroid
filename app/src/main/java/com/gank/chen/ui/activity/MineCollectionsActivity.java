@@ -33,7 +33,7 @@ import butterknife.BindView;
  * @author chenbo
  */
 @CreatePresenter(CarsListPresenter.class)
-@Route(path = RouterUrlManager.MINE_COLLECTION)
+@Route(path = RouterUrlManager.MINE_COLLECTION, extras = ConstantMap.LOGIN_EXTRA)
 public class MineCollectionsActivity extends BaseActivity<ImpChaptersListFragment, CarsListPresenter> implements ImpChaptersListFragment {
 
     @BindView(R.id.rv_carslist)

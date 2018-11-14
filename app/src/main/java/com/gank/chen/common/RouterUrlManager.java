@@ -12,7 +12,7 @@ public class RouterUrlManager {
 
     public static final String LOGIN = "/activity/LoginActivity";
     public static final String SETTING = "/activity/SettingActivity";
-    public static final String MINE_ORDER = "/activity/MineOrderActivity";
+    public static final String TODOLIST_ACTIVITY = "/activity/ToDoListActivity";
     public static final String DETAIL = "/activity/DetailActivity";
     public static final String MEIZI_DETAIL = "/activity/MeiZiDetailActivity";
     public static final String REGISTER = "/activity/RegisterActivity";
@@ -23,6 +23,7 @@ public class RouterUrlManager {
     public static final String COMMON_WEBSITES = "/activity/CommonWebsitesActivity";
     public static final String SEARCH_ACTIVITY = "/activity/SearchActivity";
     public static final String QUARY_RESULT= "/activity/QuaryResultActivity";
+    public static final String TODO_ACTIVITY= "/activity/TodoActivity";
 
 
     //fragment
