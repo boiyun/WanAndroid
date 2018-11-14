@@ -117,7 +117,6 @@ public class MyX5WebView extends WebView {
         webSetting.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
         webSetting.setSupportZoom(true);
         webSetting.setUseWideViewPort(true);
-        webSetting.setSupportMultipleWindows(true);
         webSetting.setAppCacheEnabled(true);
         webSetting.setGeolocationEnabled(true);
         webSetting.setAppCacheMaxSize(Long.MAX_VALUE);
