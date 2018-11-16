@@ -5,7 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.activity.TodoActivity">
+    tools:context=".ui.activity.AddOneTodoActivity">
 
     <include layout="@layout/toolbar_base_layout" />
+
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/qb_px_10"
+        android:background="@color/color_ffffff"
+        android:drawableLeft="@mipmap/icon_calendar"
+        android:drawablePadding="@dimen/qb_px_10"
+        android:padding="@dimen/qb_px_15"
+        tools:text="2018-10-10"
+        android:textColor="@color/color_212121"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:hint="请输入标题"
+        android:padding="@dimen/qb_px_15"
+        android:textColor="@color/color_212121"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_200"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:background="@color/color_ffffff"
+        android:gravity="start"
+        android:hint="请输入内容"
+        android:padding="@dimen/qb_px_15"
+        android:textColor="@color/color_212121"
+        android:textSize="15sp" />
 </LinearLayout>

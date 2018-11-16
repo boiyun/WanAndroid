@@ -10,6 +10,8 @@ import com.gank.chen.mvp.model.CommonWebsiteModel;
 import com.gank.chen.mvp.model.MeiZi;
 import com.gank.chen.mvp.model.NavigationModel;
 import com.gank.chen.mvp.model.RegisterModel;
+import com.gank.chen.mvp.model.TodoList;
+import com.gank.chen.mvp.model.TodoListData;
 import com.gank.chen.mvp.model.VideoBean;
 
 import java.util.ArrayList;
@@ -43,7 +45,7 @@ public interface ApiUtil {
      * @return List<MeiZi>
      */
     @Headers(GANK_HOST)
-    @GET("api/data/福利/" + ApiConfig.GANK_SIZE + "/{page}")
+    @GET("api/data/福利/" + 20 + "/{page}")
     Flowable<BaseGankModel<List<MeiZi>>> getGankData(@Path("page") int page);
 
     /**
@@ -53,7 +55,7 @@ public interface ApiUtil {
      * @return List<VideoBean>
      */
     @Headers(GANK_HOST)
-    @GET("api/data/{type}/" + ApiConfig.GANK_SIZE + "/{page}")
+    @GET("api/data/{type}/" + 20 + "/{page}")
     Flowable<BaseGankModel<List<VideoBean>>> getAndroidList(@Path("page") int page, @Path("type") String type);
 
     /**
@@ -190,7 +192,7 @@ public interface ApiUtil {
      */
     @Headers(WAN_HOST)
     @GET(UrlManager.PROJECTS_LIST)
-    Observable<BaseModel<ArticleModel>> toGetProjectList(@Path("page") int page,@Query("cid") int cid );
+    Observable<BaseModel<ArticleModel>> toGetProjectList(@Path("page") int page, @Query("cid") int cid);
 
     /**
      * 获取常用网站
@@ -227,4 +229,90 @@ public interface ApiUtil {
     @Headers(WAN_HOST)
     @GET(UrlManager.NAVIGATION)
     Observable<BaseModel<List<NavigationModel>>> getNavigationData();
+
+
+    /**
+     * ToDo数据列表
+     *
+     * @return TodoList
+     */
+    @Headers(WAN_HOST)
+    @POST(UrlManager.TODO_LIST)
+    Observable<BaseModel<TodoList>> toGetToDoList(@Path("type") int type);
+
+    /**
+     * 新增一条Todo
+     * title: 新增标题
+     * content: 新增详情
+     * date: 2018-08-01
+     * type: 0
+     *
+     * @return BaseModel
+     */
+    @Headers(WAN_HOST)
+    @FormUrlEncoded
+    @POST(UrlManager.TODO_ADD)
+    Observable<BaseModel> toAddToDo(@FieldMap Map<String, Object> map);
+
+    /**
+     * 更新一条Todo内容
+     * <p>
+     * id: 拼接在链接上，为唯一标识
+     * title: 更新标题
+     * content: 新增详情
+     * date: 2018-08-01
+     * status: 0 // 0为未完成，1为完成
+     * type: 0
+     *
+     * @return BaseModel
+     */
+    @Headers(WAN_HOST)
+    @FormUrlEncoded
+    @POST(UrlManager.TODO_UPDATE)
+    Observable<BaseModel> toUpdateToDo(@Path("id") int id, @FieldMap Map<String, Object> map);
+
+    /**
+     * 删除一条Todo
+     *
+     * @return BaseModel
+     */
+    @Headers(WAN_HOST)
+    @POST(UrlManager.TODO_DELETE)
+    Observable<BaseModel> toDeleteToDo(@Path("id") int id);
+
+    /**
+     * 仅更新完成状态Todo
+     * <p>
+     * id: 拼接在链接上，为唯一标识
+     * status: 0或1，传1代表未完成到已完成，反之则反之。
+     *
+     * @return BaseModel
+     */
+    @Headers(WAN_HOST)
+    @POST(UrlManager.TODO_DONE)
+    Observable<BaseModel> toDoneToDo(@Path("id") int id, @Query("status") int status);
+
+    /**
+     * 未完成Todo列表
+     * <p>
+     * 类型：类型拼接在链接上，目前支持0,1,2,3
+     * 页码: 拼接在链接上，从1开始；
+     *
+     * @return List<TodoListData>
+     */
+    @Headers(WAN_HOST)
+    @POST(UrlManager.TODO_NOT_DO)
+    Observable<BaseModel<List<TodoListData>>> toGetNotDoToDoList(@Path("type") int type, @Path("page") int page);
+
+    /**
+     * 已完成Todo列表
+     * <p>
+     * 类型：类型拼接在链接上，目前支持0,1,2,3
+     * 页码: 拼接在链接上，从1开始；
+     *
+     * @return List<TodoListData>
+     */
+    @Headers(WAN_HOST)
+    @POST(UrlManager.TODO_LIST_DONE)
+    Observable<BaseModel<List<TodoListData>>> toGetDoneToDoList(@Path("type") int type, @Path("page") int page);
 }

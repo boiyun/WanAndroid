@@ -7,6 +7,9 @@ package com.gank.chen.http;
  * @author chenbo
  */
 public class UrlManager {
+    public static final String HOST = "http://gank.io/";
+    public static final String HOST_Wan = "http://www.wanandroid.com/";
+
     /**
      * 注册
      */
@@ -75,4 +78,32 @@ public class UrlManager {
      * 导航数据
      */
     public static final String NAVIGATION = "navi/json";
+    /**
+     * ToDo数据列表
+     */
+    public static final String TODO_LIST = "lg/todo/list/{type}/json";
+    /**
+     * 新增一条Todo
+     */
+    public static final String TODO_ADD = "lg/todo/add/json";
+    /**
+     * 更新一条Todo内容
+     */
+    public static final String TODO_UPDATE = "lg/todo/update/{id}/json";
+    /**
+     * 删除一条Todo
+     */
+    public static final String TODO_DELETE = "lg/todo/delete/{id}/json";
+    /**
+     * 仅更新完成状态Todo
+     */
+    public static final String TODO_DONE = "lg/todo/done/{id}/json";
+    /**
+     * 未完成Todo列表
+     */
+    public static final String TODO_NOT_DO = "lg/todo/listnotdo/{type}/json/{page}";
+    /**
+     * 已完成Todo列表
+     */
+    public static final String TODO_LIST_DONE = "lg/todo/listdone/{type}/json/{page}";
 }

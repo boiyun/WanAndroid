@@ -90,7 +90,7 @@
         <activity
             android:name=".ui.activity.QuaryResultActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.TodoActivity"></activity>
+        <activity android:name=".ui.activity.AddOneTodoActivity"></activity>
     </application>
 
 </manifest>

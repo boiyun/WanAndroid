@@ -16,6 +16,11 @@ public class Event<T> {
      * 登录成功
      */
     public static final int EVENT_LOGIN_SUCCESS = 10003;
+    /**
+     * todo的type
+     */
+    public static final int TODO_TYPE = 10004;
+
 
     private T data;
 

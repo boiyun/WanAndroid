@@ -22,7 +22,7 @@ public class HomePageAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return FragmentFactory.creatTodoFragment();
+        return FragmentFactory.creatTodoFragment(position);
     }
 
     @Override

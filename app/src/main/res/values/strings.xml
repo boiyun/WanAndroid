@@ -10,8 +10,8 @@
         <item>前端</item>
     </string-array>
     <string-array name="order_tab">
-        <item>已完成</item>
         <item>未完成</item>
+        <item>已完成</item>
     </string-array>
     <string name="password_login">密码登录</string>
     <string name="verificationcode_login">验证码登录</string>
@@ -46,5 +46,12 @@
     <string name="bye_burger_float_behavior">com.gank.chen.widget.behavior.ByeBurgerFloatButtonBehavior</string>
     <string name="bye_burger_bottom_behavior">com.gank.chen.widget.behavior.ByeBurgerBottomBehavior</string>
     <string name="bye_burger_title_behavior">com.gank.chen.widget.behavior.ByeBurgerTitleBehavior</string>
+    <string name="ScaleDownShowBehavior">com.gank.chen.widget.behavior.ScaleDownShowBehavior</string>
     <string name="float_behavior">com.gank.chen.widget.behavior.ScrollAwareFABBehaviorDefault</string>
+    <string name="todo">ToDo工具</string>
+    <string name="mine_collection">我的收藏</string>
+    <string name="setting">设置</string>
+    <string name="share">分享</string>
+    <string name="about">关于</string>
+    <string name="exit">退出账号</string>
 </resources>

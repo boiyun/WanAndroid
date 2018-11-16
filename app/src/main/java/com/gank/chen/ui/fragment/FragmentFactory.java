@@ -37,8 +37,11 @@ public class FragmentFactory {
         return fragment;
     }
 
-    public static Fragment creatTodoFragment() {
-        Fragment fragment = RouterUtil.getFragment(RouterUrlManager.MEIZI_FRAGMENT);
+    public static Fragment creatTodoFragment(int position) {
+        Fragment fragment = RouterUtil.getFragment(RouterUrlManager.TODOLIST_FRAGMENT);
+        Bundle bundle = new Bundle();
+        bundle.putInt("doneOrNot", position);
+        fragment.setArguments(bundle);
         return fragment;
     }
 }

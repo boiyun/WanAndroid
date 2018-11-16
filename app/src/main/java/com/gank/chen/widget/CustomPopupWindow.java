@@ -80,12 +80,11 @@ public class CustomPopupWindow extends PopupWindow {
 
     public void show() {//默认显示到中间
         if (mParentView == null) {
-            showAtLocation(mContentView, Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+            showAtLocation(mContentView, Gravity.CENTER , 0, 0);
         } else {
-            showAtLocation(mParentView, Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+            showAtLocation(mParentView, Gravity.CENTER , 0, 0);
         }
     }
-
 
     public static final class Builder {
         private View contentView;

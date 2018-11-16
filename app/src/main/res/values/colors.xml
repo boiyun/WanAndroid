@@ -5,11 +5,12 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="color_ff4081">#FF4081</color>
-
+    <color name="colorPrimary_50">#802196F3</color>
     <color name="color_ffffff">#ffffff</color>
     <!--toast背景颜色-->
     <color name="bg_black_toast">#a9858585</color>
     <color name="color_60white">#99ffffff</color>
+    <color name="color_30white">#4Dffffff</color>
     <color name="color_000000">#000000</color>
 
     <color name="color_f4f4f4">#f4f4f4</color>

@@ -3,15 +3,11 @@ package com.gank.chen.http.exception;
 
 import android.content.Context;
 import android.net.ParseException;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.gank.chen.R;
 import com.gank.chen.common.RouterUrlManager;
 import com.gank.chen.util.RouterUtil;
-import com.gank.chen.widget.CustomPopupWindow;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonSyntaxException;

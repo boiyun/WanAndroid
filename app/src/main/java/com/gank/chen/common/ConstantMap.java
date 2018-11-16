@@ -14,6 +14,11 @@ public class ConstantMap {
     public static final int NUM_SIXTY = 60;
     public static final int LOGIN_EXTRA = 1;
 
+    public static final int TODO_THIS_ONE = 0;
+    public static final int TODO_WORK = 1;
+    public static final int TODO_STUDY = 2;
+    public static final int TODO_LIFE = 3;
+
     public static final String IS_LOGIN = "isLogin";
     public static final String USER_HEADER_ICON = "user_header";
     public static final String USER_PHONE = "user_phone";

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_top_todo"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/qb_px_45"
+    android:background="@color/color_30white"
+    android:paddingLeft="@dimen/qb_px_15">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="@color/color_212121"
+        android:textSize="13sp"
+        tools:text="2018-12-3" />
+
+</RelativeLayout>

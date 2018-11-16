@@ -49,8 +49,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiRetrofit {
     private static final int DEFAULT_TIMEOUT = 20;
     private ApiUtil apiUtil;
-    static final String BASE_URL = ApiConfig.HOST;
-    static final String BASE_WAN_URL = ApiConfig.HOST_DUANZI;
+    static final String BASE_URL = UrlManager.HOST;
+    static final String BASE_WAN_URL = UrlManager.HOST_Wan;
 
     public ApiUtil getApi() {
         return apiUtil;
