@@ -1,6 +1,6 @@
 # WanAndroid
 
-### 一款基于鸿洋大神提供的玩Android Api的app。
+### 一款基于鸿洋大神提供的[玩Android Api](http://wanandroid.com/blog/show/2)的app。
 
 ## 简介
 
@@ -16,6 +16,7 @@
 * [lottie](https://github.com/airbnb/lottie-android)
 * [material-dialogs](https://github.com/afollestad/material-dialogs)
 * [matisse](https://github.com/zhihu/Matisse)
+* [BGASwipeBackLayout-Android](https://github.com/bingoogolapple/BGASwipeBackLayout-Android)
 
 
 ## apk安装地址
@@ -24,14 +25,16 @@
 
 ## 项目截图
 
-![](/screenshot/1.png)
-![](/screenshot/2.png)
-![](/screenshot/3.png)
-![](/screenshot/4.png)
+![](/screenshot/1.png=270x540)
+![](/screenshot/2.png=270x540)
+![](/screenshot/3.png=270x540)
+![](/screenshot/4.png=270x540)
+![](/screenshot/5.png=270x540)
+![](/screenshot/6.png=270x540)
 
 
 ## 最后
 
 * 感谢鸿洋大神提供的平台
-* 感谢干货集中营提供的妹子图
+* 感谢[干货集中营](https://gank.io/api)提供的妹子图
 * 感谢项目中使用的三方库
