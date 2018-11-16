@@ -25,12 +25,12 @@
 
 ## 项目截图
 
-![](/screenshot/1.png =270x540)
-![](/screenshot/2.png =270x540)
-![](/screenshot/3.png =270x540)
-![](/screenshot/4.png =270x540)
-![](/screenshot/5.png =270x540)
-![](/screenshot/6.png =270x540)
+![](/screenshot/1.png )
+![](/screenshot/2.png )
+![](/screenshot/3.png )
+![](/screenshot/4.png )
+![](/screenshot/5.png )
+![](/screenshot/6.png )
 
 
 ## 最后
